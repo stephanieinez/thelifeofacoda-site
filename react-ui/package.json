@@ -1,0 +1,33 @@
+{
+  "name": "laurayoga",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "contentful": "^5.1.0",
+    "marked": "^0.3.12",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
+    "react-moment": "^0.7.0",
+    "react-responsive-navbar": "^1.0.11",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.3.3",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-react-app": "^2.0.1",
+    "prettier": "^1.8.2",
+    "prettier-eslint": "^8.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,97 @@
+.contact-form-container {
+  width: 60%;
+  padding: 30px 0 0 60px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  color: #245031;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+form {
+  padding-top: 20px;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  position: relative;
+  color: black;
+  width: 90%;
+  font-size: 12px;
+  font-weight: lighter;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d8;
+  border-radius: 4px;
+}
+
+placeholder {
+  font-family: inherit;
+}
+
+button[type='submit'] {
+  margin: 8px 0;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  border: none;
+  background-color: #245031;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+}
+
+button[type='submit']:hover {
+  font-family: HANDSIGN;
+  font-size: 25px;
+}
+
+.disable-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.disable-button:hover {
+  color: #245031;
+  opacity: 0.5;
+}
+
+.mail-success {
+  color: #245031;
+  font-size: 18px;
+}
+
+.mail-loading {
+  color: #245031;
+  font-size: 18px;
+}
+
+.email-error {
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-form-container {
+    width: 70%;
+    padding-left: 0;
+  }
+}

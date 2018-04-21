@@ -1,0 +1,46 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-image {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overlay {
+  padding: 15px;
+  height: 270px;
+  width: 270px;
+  background-color: white;
+  opacity: 0.7;
+  position: absolute;
+  top: 150px;
+  text-align: center;
+}
+
+.overlay-logo {
+  width: 150px;
+  padding-top: 20px;
+}
+
+.overlay-text {
+  padding-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.overlay-text:hover {
+  font-family: HANDSIGN;
+  font-size: 40px;
+  font-weight: normal;
+  padding-top: 10px;
+}
