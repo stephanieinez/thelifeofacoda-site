@@ -9,7 +9,7 @@ const About = ({ aboutTitle, aboutContent, image, video }) => {
     <div>
       <div
         className="content-page-header"
-        style={{ backgroundImage: `url(${image.fields.file.url})` }}
+        style={{ backgroundImage: `url(${image})` }}
       />
       <div className="about-heading">{aboutTitle}</div>
       <div className="about-content-wrapper">
@@ -33,14 +33,14 @@ const About = ({ aboutTitle, aboutContent, image, video }) => {
 About.defaultProps = {
   aboutContent: '',
   aboutTitle: '',
-  image: { fields: { file: { url: '' } } },
+  image: '',
   video: '',
 };
 
 About.propTypes = {
   aboutTitle: PropTypes.string.isRequired,
   aboutContent: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired, //eslint-disable-line
+  image: PropTypes.string.isRequired, //eslint-disable-line
   video: PropTypes.string.isRequired,
 };
 

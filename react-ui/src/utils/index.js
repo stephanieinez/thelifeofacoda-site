@@ -1,5 +1,6 @@
+// eslint-disable-next-line
 export const normalise = (response = {}) => {
-  const { about, blogPost, home, contact } = response;
+  const { about, blogPosts, home, contact, featuredPosts } = response;
   return {
     about: {
       aboutTitle: about.aboutTitle,
@@ -7,13 +8,8 @@ export const normalise = (response = {}) => {
       aboutText: about.aboutText,
       aboutVideo: about.aboutVideo,
     },
-    blogPost: {
-      blogTitle: blogPost.blogTitle,
-      blogPath: blogPost.blogPath,
-      blogDate: blogPost.blogDate,
-      blogContent: blogPost.blogContent,
-      blogVideo: blogPost.blogVideo,
-    },
+    blogPosts,
+    featuredPosts,
     home: {
       heroImage: home.heroImage.fields.file.url,
       aboutText: home.aboutText,

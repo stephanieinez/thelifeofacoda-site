@@ -7,3 +7,6 @@ export { default as Footer } from './Footer';
 export { default as ContactForm } from './ContactForm';
 export { ErrorBoundaryPageRender } from './ErrorBoundaryPage';
 export { default as ErrorBoundaryPage } from './ErrorBoundaryPage';
+export { default as NotFound } from './NotFound';
+export { default as FeaturedPosts } from './FeaturedPosts';
+export { default as Loading } from './Loading';

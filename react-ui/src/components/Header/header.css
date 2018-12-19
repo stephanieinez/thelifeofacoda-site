@@ -29,18 +29,24 @@
 
 .overlay-logo {
   width: 150px;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .overlay-text {
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.overlay-about {
+  padding-top: 20px;
   font-weight: bold;
 }
 
 .overlay-text:hover {
   font-family: HANDSIGN;
-  font-size: 40px;
+  font-size: 37px;
   font-weight: normal;
-  padding-top: 10px;
+  padding-top: 0;
 }

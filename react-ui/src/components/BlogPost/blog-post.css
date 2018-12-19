@@ -13,8 +13,8 @@
   font-weight: normal;
 }
 
-.blog-container {
-  padding: 20px;
+.blog {
+  padding: 0 40px;
 }
 
 .blog-content-wrapper {
@@ -27,7 +27,27 @@
   width: 50%;
 }
 
+.blog-content blockquote {
+  font-style: italic;
+  font-size: larger;
+}
+
+.blog-only-content {
+  width: 100%;
+}
+
+.blog-only-content img {
+  max-width: 500px;
+}
+
+.blog-only-content blockquote {
+  font-style: italic;
+  font-size: x-large;
+}
+
 .blog-date {
+  font-size: smaller;
+  font-style: italic;
   padding-top: 5px;
 }
 
@@ -50,5 +70,8 @@
   .blog-heading,
   .blog-date {
     text-align: center;
+  }
+  .blog-only-content img {
+    max-width: 300px;
   }
 }

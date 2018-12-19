@@ -1,35 +1,54 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { BlogPost } from '../../components';
+import React, { Component } from 'react';
+import { BlogPost, Loading } from '../../components';
 import './blog.css';
 
-const Blog = ({ blogTitle, blogContent, blogVideo, blogDate }) => (
-  <div>
-    <div className="featured-post-container">
-      <div className="featured-post">Featured Post 1</div>
-      <div className="featured-post">Featured Post 2</div>
-    </div>
-    <BlogPost
-      blogTitle={blogTitle}
-      blogContent={blogContent}
-      blogVideo={blogVideo}
-      blogDate={blogDate}
-    />
-  </div>
-);
+class Blog extends Component {
+  constructor() {
+    super();
+    this.state = {
+      blogPosts: {},
+      loading: true
+    };
+  }
 
-Blog.defaultProps = {
-  blogTitle: '',
-  blogContent: '',
-  blogVideo: '',
-  blogDate: '',
-};
+  componentDidMount() {
+    fetch('http://localhost:5000/api/blog')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error getting content');
+        }
+        return response.json();
+      })
+      .then(apiResult => {
+        this.setState({ loading: false, blogPosts: apiResult });
+      })
+      .catch(error => {
+        console.log('error', error);
+      });
+  }
 
-Blog.propTypes = {
-  blogTitle: PropTypes.string.isRequired,
-  blogContent: PropTypes.string.isRequired,
-  blogVideo: PropTypes.string.isRequired,
-  blogDate: PropTypes.string.isRequired,
-};
+  render() {
+    const { blogPosts, loading } = this.state;
+    console.log(blogPosts);
+
+    return (
+      <div className="blog-container">
+        {!loading ? (
+          blogPosts.blogPosts.map((item, index) => (
+            <BlogPost
+              blogTitle={item.blogTitle}
+              blogContent={item.blogContent}
+              blogVideo={item.blogVideo}
+              blogDate={item.blogDate}
+              key={index}
+            />
+          ))
+        ) : (
+          <Loading />
+        )}
+      </div>
+    );
+  }
+}
 
 export default Blog;

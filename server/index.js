@@ -44,7 +44,7 @@ if (cluster.isMaster) {
     mailgunClient.messages
       .create(mailgunServer, {
         from: `Laura O'Grady <mailgun@${mailgunServer}>`,
-        to: ['stephanie.tassone@gmail.com'],
+        to: ['annie.inez@gmail.com'],
         subject: `New message via your website from: ${req.body.email}`,
         text: emailTemplate
       })
@@ -62,18 +62,55 @@ if (cluster.isMaster) {
       }); // logs any error
   });
 
-  app.get('/api/content', function(req, res) {
-    const apiResult = {};
+  app.get('/api/blog', function(req, res) {
+    const apiResult = {
+      blogPosts: []
+    };
     contentfulClient
-      .getEntries()
+      .getEntries({
+        order: '-sys.createdAt',
+        limit: 10,
+        skip: 0
+      })
       .then(entries => {
         entries.items.forEach(entry => {
           if (entry) {
-            apiResult[entry.sys.contentType.sys.id] = entry.fields;
+            if (entry.sys.contentType.sys.id === 'blogPost') {
+              apiResult.blogPosts.push(entry.fields);
+            }
           }
         });
         res.send(apiResult);
       })
+      .catch(err => {
+        res.status(err.status || 500);
+        res.send({
+          message: err.message,
+          error: err
+        });
+        console.log(err);
+      });
+  });
+
+  const getContentByType = content_type =>
+    contentfulClient.getEntries({ content_type });
+
+  app.get('/api/content', function(req, res) {
+    const contentTypes = ['about', 'contact', 'home'];
+    Promise.all(contentTypes.map(getContentByType))
+      .then(result => {
+        return result.reduce((accum, item) => {
+          if (item) {
+            item.items.forEach(entry => {
+              if (entry) {
+                accum[entry.sys.contentType.sys.id] = entry.fields;
+              }
+            });
+          }
+          return accum;
+        }, {});
+      })
+      .then(apiResult => res.send(apiResult))
       .catch(err => {
         res.status(err.status || 500);
         res.send({

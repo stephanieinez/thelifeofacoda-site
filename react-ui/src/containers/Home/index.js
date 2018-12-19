@@ -18,14 +18,14 @@ Home.defaultProps = {
   aboutText: '',
   servicesItems: [],
   image: '',
-  dividerImage: '',
+  dividerImage: ''
 };
 
 Home.propTypes = {
   aboutText: PropTypes.string.isRequired,
   servicesItems: PropTypes.array.isRequired, //eslint-disable-line
   image: PropTypes.string.isRequired,
-  dividerImage: PropTypes.string.isRequired,
+  dividerImage: PropTypes.string.isRequired
 };
 
 export default Home;

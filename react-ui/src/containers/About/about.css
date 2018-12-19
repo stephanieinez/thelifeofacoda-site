@@ -4,6 +4,7 @@
   font-size: 26px;
   font-weight: bold;
   padding-top: 30px;
+  padding-bottom: 20px;
   height: 50px;
   text-align: center;
 }
@@ -25,7 +26,16 @@
 
 .about-content {
   width: 50%;
-  padding: 20px 40px 20px;
+  padding: 0 40px;
+}
+
+.about-content p {
+  margin: 0;
+}
+
+.about-content blockquote {
+  font-style: italic;
+  font-size: x-large;
 }
 
 .about-video {
@@ -41,8 +51,10 @@
   .about-content {
     width: 80%;
   }
+
   .about-video {
     width: 80%;
-    padding: 0;
+    height: 500px;
+    padding: 0 0 20px 0;
   }
 }

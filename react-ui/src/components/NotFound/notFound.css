@@ -1,0 +1,23 @@
+.notfound-container {
+  text-align: center;
+  margin-top: -100px;
+  padding-bottom: 20px;
+}
+.notfound-text {
+  padding: 170px 10px 10px 10px;
+  font-size: 18px;
+}
+.notfound-image {
+  position: relative;
+  top: 150px;
+  height: 300px;
+  margin: 0 auto 0 auto;
+}
+.notfound-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #245031;
+}
+.notfound-link:hover {
+  text-decoration: underline;
+}

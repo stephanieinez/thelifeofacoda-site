@@ -4,10 +4,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "max-len": 0,
@@ -21,7 +18,9 @@
     "react/no-did-mount-set-state": 1,
     "import/no-named-as-default": 1,
     "react/no-unescaped-entities": 1,
-     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+    "comma-dangle": ["never"],
+    "arrow-parens": ["as-needed", { "requireForBlockBody": true }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   },
   "parser": "babel-eslint",
   "globals": {

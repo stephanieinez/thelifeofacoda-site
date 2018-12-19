@@ -4,7 +4,13 @@ import 'whatwg-fetch';
 
 import './App.css';
 import { ROOT, CONTACT, BLOG, ABOUT } from './routes';
-import { Navigation, Footer, ErrorBoundaryPageRender } from './components';
+import {
+  Navigation,
+  Footer,
+  ErrorBoundaryPageRender,
+  NotFound,
+  Loading
+} from './components';
 import { normalise } from './utils';
 
 import Home from './containers/Home';
@@ -20,62 +26,57 @@ class App extends Component {
       error: '',
       home: {},
       about: {},
-      contact: {},
-      blogPost: {},
+      contact: {}
     };
   }
   componentDidMount() {
     fetch('http://localhost:5000/api/content')
-      .then((response) => {
+      .then(response => {
         if (!response.ok) {
           throw new Error('Error getting content');
         }
         return response.json();
       })
-      .then((apiResult) => {
+      .then(apiResult => {
         const items = normalise(apiResult);
         this.setState({ loading: false, ...items });
       })
-      .catch((error) => {
+      .catch(error => {
         this.setState({ error, loading: false });
       });
   }
+
   render() {
-    const { error, home, blogPost, contact, about } = this.state;
+    const { error, home, contact, about, loading } = this.state;
     if (error) {
       return <ErrorBoundaryPageRender />;
     }
-    console.log('state', this.state);
     return (
       <div>
         <BrowserRouter>
           <div>
             <Navigation />
             <Switch>
-              <Route
-                exact
-                path={ROOT}
-                render={reactRouterProps => (
-                  <Home
-                    {...reactRouterProps}
-                    aboutText={home.aboutText}
-                    servicesItems={home.services}
-                    image={home.heroImage}
-                    dividerImage={home.dividerImage}
-                  />
-                )}
-              />
+              {!loading ? (
+                <Route
+                  exact
+                  path={ROOT}
+                  render={reactRouterProps => (
+                    <Home
+                      {...reactRouterProps}
+                      aboutText={home.aboutText}
+                      servicesItems={home.services}
+                      image={home.heroImage}
+                      dividerImage={home.dividerImage}
+                    />
+                  )}
+                />
+              ) : (
+                <Loading />
+              )}
               <Route
                 path={BLOG}
-                render={reactRouterProps => (
-                  <Blog
-                    {...reactRouterProps}
-                    blogTitle={blogPost.blogTitle}
-                    blogContent={blogPost.blogContent}
-                    blogVideo={blogPost.blogVideo}
-                    blogDate={blogPost.blogDate}
-                  />
-                )}
+                render={reactRouterProps => <Blog {...reactRouterProps} />}
               />
               <Route
                 path={CONTACT}
@@ -99,6 +100,7 @@ class App extends Component {
                   />
                 )}
               />
+              <Route component={NotFound} />
             </Switch>
             <Footer />
           </div>

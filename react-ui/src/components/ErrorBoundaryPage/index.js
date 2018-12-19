@@ -11,9 +11,10 @@ export const ErrorBoundaryPageRender = () => (
     </p>
     <p>
       In the meantime, you can email me directly at{' '}
-      <a href="mailto:paddhuiy@gmail.com">paddhuiy@gmail.com</a>
+      <a href="mailto:laura@gmail.com">laura@gmail.com</a>
       <br />
-      Or tweet me <a href="https://twitter.com/paddhuiy">@paddhuiy</a>
+      Or find me on Instagram{' '}
+      <a href="https://twitter.com/thelifeofacoda">@thelifeofacoda</a>
     </p>
   </div>
 );
