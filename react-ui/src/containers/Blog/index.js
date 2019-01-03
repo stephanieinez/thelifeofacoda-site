@@ -12,7 +12,7 @@ class Blog extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/api/blog')
+    fetch('/api/blog')
       .then(response => {
         if (!response.ok) {
           throw new Error('Error getting content');

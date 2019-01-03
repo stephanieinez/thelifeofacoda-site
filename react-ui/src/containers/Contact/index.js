@@ -7,42 +7,42 @@ class Contact extends Component {
     loadingMail: false,
     mailError: false,
     mailSuccess: false,
-    disableButton: false,
+    disableButton: false
   };
 
-  contactFromSubmit = (submission) => {
+  contactFromSubmit = submission => {
     const { email, message } = submission;
     this.setState(
       {
         loadingMail: true,
         mailError: false,
         mailSuccess: false,
-        disableButton: true,
+        disableButton: true
       },
       () => {
-        fetch('http://localhost:5000/api/email', {
+        fetch('/api/email', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({
             email,
-            message,
-          }),
+            message
+          })
         })
           .then(response => response.json())
           .then(() => {
             this.setState({
               loadingMail: false,
               mailSuccess: true,
-              disableButton: false,
+              disableButton: false
             });
           })
-          .catch((error) => {
+          .catch(error => {
             this.setState({ mailError: true, disableButton: false });
             console.log(error);
           });
-      },
+      }
     );
   };
 
@@ -67,11 +67,11 @@ class Contact extends Component {
 
 Contact.defaultProps = {
   contactText: '',
-  image: '',
+  image: ''
 };
 
 Contact.propTypes = {
   contactText: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
 };
 export default Contact;
