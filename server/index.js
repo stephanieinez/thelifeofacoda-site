@@ -112,12 +112,12 @@ if (cluster.isMaster) {
       })
       .then(apiResult => res.send(apiResult))
       .catch(err => {
+        console.error(err);
         res.status(err.status || 500);
         res.send({
           message: err.message,
           error: err
         });
-        console.log(err);
       });
   });
 

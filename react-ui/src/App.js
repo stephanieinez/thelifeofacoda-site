@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'whatwg-fetch';
 
 import './App.css';
-import { ROOT, CONTACT, BLOG, ABOUT } from './routes';
+import { ROOT, CONTACT, ABOUT } from './routes';
 import {
   Navigation,
   Footer,
@@ -14,7 +14,7 @@ import {
 import { normalise } from './utils';
 
 import Home from './containers/Home';
-import Blog from './containers/Blog';
+// import Blog from './containers/Blog';
 import Contact from './containers/Contact';
 import About from './containers/About';
 
@@ -74,10 +74,10 @@ class App extends Component {
               ) : (
                 <Loading />
               )}
-              <Route
+              {/* <Route
                 path={BLOG}
                 render={reactRouterProps => <Blog {...reactRouterProps} />}
-              />
+              /> */}
               <Route
                 path={CONTACT}
                 render={reactRouterProps => (

@@ -8,8 +8,8 @@ import './navigation.css';
 const Navigation = () => (
   <div>
     <ResponsiveMenu
-      menuOpenButton={<FaBars size={30} color="#245031" />}
-      menuCloseButton={<FaClose size={30} color="#245031" />}
+      menuOpenButton={<FaBars size={30} color="#998b6c" />}
+      menuCloseButton={<FaClose size={30} color="#998b6c" />}
       changeMenuOn="530px"
       smallMenuClassName="small-navbar"
       menu={
@@ -22,9 +22,9 @@ const Navigation = () => (
               <li>
                 <Link to={ABOUT}>About</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to={BLOG}>Blog</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to={CONTACT}>Contact</Link>
               </li>
