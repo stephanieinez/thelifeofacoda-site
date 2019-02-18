@@ -44,7 +44,7 @@ if (cluster.isMaster) {
     mailgunClient.messages
       .create(mailgunServer, {
         from: `Laura O'Grady <mailgun@${mailgunServer}>`,
-        to: ['annie.inez@gmail.com'],
+        to: ['thelifeofacoda@gmail.com'],
         subject: `New message via your website from: ${req.body.email}`,
         text: emailTemplate
       })
@@ -68,7 +68,7 @@ if (cluster.isMaster) {
     };
     contentfulClient
       .getEntries({
-        order: '-sys.createdAt',
+        order: 'sys.createdAt',
         limit: 10,
         skip: 0
       })
@@ -92,11 +92,67 @@ if (cluster.isMaster) {
       });
   });
 
+  app.get('/api/pt', function(req, res) {
+    const apiResult = {
+      personalTraining: []
+    };
+    contentfulClient
+      .getEntries({
+        order: 'sys.createdAt'
+      })
+      .then(entries => {
+        entries.items.forEach(entry => {
+          if (entry) {
+            if (entry.sys.contentType.sys.id === 'personalTraining') {
+              apiResult.personalTraining.push(entry.fields);
+            }
+          }
+        });
+        res.send(apiResult);
+      })
+      .catch(err => {
+        res.status(err.status || 500);
+        res.send({
+          message: err.message,
+          error: err
+        });
+        console.log(err);
+      });
+  });
+
+  app.get('/api/yogaClasses', function(req, res) {
+    const apiResult = {
+      yogaClasses: []
+    };
+    contentfulClient
+      .getEntries({
+        order: 'sys.createdAt'
+      })
+      .then(entries => {
+        entries.items.forEach(entry => {
+          if (entry) {
+            if (entry.sys.contentType.sys.id === 'yogaClasses') {
+              apiResult.yogaClasses.push(entry.fields);
+            }
+          }
+        });
+        res.send(apiResult);
+      })
+      .catch(err => {
+        res.status(err.status || 500);
+        res.send({
+          message: err.message,
+          error: err
+        });
+        console.log(err);
+      });
+  });
+
   const getContentByType = content_type =>
     contentfulClient.getEntries({ content_type });
 
   app.get('/api/content', function(req, res) {
-    const contentTypes = ['about', 'contact', 'home'];
+    const contentTypes = ['about', 'contact', 'home', 'ptLocation', 'yoga'];
     Promise.all(contentTypes.map(getContentByType))
       .then(result => {
         return result.reduce((accum, item) => {

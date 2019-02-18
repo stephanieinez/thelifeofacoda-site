@@ -34,7 +34,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then(response => {
         if (!response.ok) {
           throw new Error('Error getting content');

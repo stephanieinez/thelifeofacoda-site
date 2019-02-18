@@ -13,7 +13,7 @@ class PersonalTraining extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/api/pt')
+    fetch('/api/pt')
       .then(response => {
         if (!response.ok) {
           throw new Error('Error getting content');
