@@ -7,17 +7,17 @@ class ContactForm extends Component {
   state = {
     email: '',
     message: '',
-    emailError: '',
+    emailError: ''
   };
 
   handleInputChange = id => event =>
     this.setState({ [id]: event.target.value });
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     if (!this.state.email) {
       return this.setState({
-        emailError: 'Please enter your email address',
+        emailError: 'Please enter your email address'
       });
     }
     return this.setState({ emailError: '' }, this.props.submitForm(this.state));
@@ -29,10 +29,6 @@ class ContactForm extends Component {
     const body = marked(contactText);
     return (
       <div>
-        <div
-          className="content-page-header"
-          style={{ backgroundImage: `url(${image})` }}
-        />{' '}
         <div className="contact-container">
           <div className="contact-form-container">
             <div dangerouslySetInnerHTML={{ __html: body }} />
@@ -100,12 +96,12 @@ class ContactForm extends Component {
 
 ContactForm.defaultProps = {
   contactText: '',
-  image: '',
+  image: ''
 };
 
 ContactForm.propTypes = {
   contactText: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired, //eslint-disable-line
+  image: PropTypes.string.isRequired //eslint-disable-line
 };
 
 export default ContactForm;

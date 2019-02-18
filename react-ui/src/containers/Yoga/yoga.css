@@ -1,0 +1,113 @@
+.yoga-container {
+  margin: 90px 20px;
+}
+
+.yoga-heading {
+  text-align: center;
+  text-transform: uppercase;
+  color: #bfac6e;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.yoga-content-wrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.yoga-content {
+  width: 50%;
+  height: 400px;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  overflow: scroll;
+}
+
+.white-content {
+  width: 90%;
+  padding: 20px;
+}
+
+.yoga-video {
+  width: 50%;
+  height: 400px;
+  margin: 20px 20px 20px;
+}
+
+.yoga-video-big {
+  width: 60%;
+  height: 500px;
+  margin: 20px 20px 20px;
+}
+
+.yoga-title {
+  text-transform: uppercase;
+  color: #bfac6e;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+hr {
+  border: none;
+  border-bottom: #bfac6e solid 2px;
+  margin-bottom: 20px;
+}
+
+.address-container {
+  display: flex;
+  justify-content: center;
+}
+
+.map {
+  width: 70%;
+  margin-left: 20px;
+}
+
+.yoga-classes-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.yoga-classes-wrapper p {
+  margin: 0;
+}
+
+.yoga-class-text {
+  margin-bottom: 20px;
+}
+
+.yoga-date {
+  margin: 0;
+  font-size: 0.75em;
+}
+
+.yoga-location {
+  margin-left: 20px;
+}
+
+@media (max-width: 900px) {
+  .yoga-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .yoga-content,
+  .white-content,
+  .yoga-video {
+    width: 90%;
+    padding: 0;
+  }
+  .yoga-titla {
+    text-align: center;
+  }
+}

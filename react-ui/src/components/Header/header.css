@@ -1,19 +1,19 @@
 .header-container {
+  padding-top: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.header-container img {
+  max-height: 300px;
 }
 
 .header-image {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 800px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
@@ -25,6 +25,11 @@
   position: absolute;
   top: 150px;
   text-align: center;
+}
+
+.home-video {
+  height: 500px;
+  width: 500px;
 }
 
 .overlay-logo {

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'whatwg-fetch';
 
 import './App.css';
-import { ROOT, CONTACT, ABOUT } from './routes';
+import { ROOT, CONTACT, ABOUT, YOGA, PT } from './routes';
 import {
   Navigation,
   Footer,
@@ -17,6 +17,8 @@ import Home from './containers/Home';
 // import Blog from './containers/Blog';
 import Contact from './containers/Contact';
 import About from './containers/About';
+import Yoga from './containers/Yoga';
+import PersonalTraining from './containers/PT';
 
 class App extends Component {
   constructor() {
@@ -26,11 +28,13 @@ class App extends Component {
       error: '',
       home: {},
       about: {},
-      contact: {}
+      contact: {},
+      yoga: {},
+      ptLocation: {}
     };
   }
   componentDidMount() {
-    fetch('/api/content')
+    fetch('http://localhost:5000/api/content')
       .then(response => {
         if (!response.ok) {
           throw new Error('Error getting content');
@@ -47,10 +51,18 @@ class App extends Component {
   }
 
   render() {
-    const { error, home, contact, about, loading } = this.state;
-    if (error) {
-      return <ErrorBoundaryPageRender />;
-    }
+    const {
+      error,
+      home,
+      contact,
+      about,
+      loading,
+      ptLocation,
+      yoga
+    } = this.state;
+    // if (error) {
+    //   return <ErrorBoundaryPageRender />;
+    // }
     return (
       <div>
         <BrowserRouter>
@@ -65,9 +77,9 @@ class App extends Component {
                     <Home
                       {...reactRouterProps}
                       aboutText={home.aboutText}
-                      servicesItems={home.services}
                       image={home.heroImage}
                       dividerImage={home.dividerImage}
+                      homeVideo={home.homeVideo}
                     />
                   )}
                 />
@@ -78,6 +90,27 @@ class App extends Component {
                 path={BLOG}
                 render={reactRouterProps => <Blog {...reactRouterProps} />}
               /> */}
+              <Route
+                path={PT}
+                render={reactRouterProps => (
+                  <PersonalTraining
+                    ptLocation={ptLocation.ptLocation}
+                    ptAddress={ptLocation.ptAddress}
+                    {...reactRouterProps}
+                  />
+                )}
+              />
+              <Route
+                path={YOGA}
+                render={reactRouterProps => (
+                  <Yoga
+                    yogaTitle={yoga.yogaTitle}
+                    yogaText={yoga.yogaText}
+                    yogaVideo={yoga.yogaVideo}
+                    {...reactRouterProps}
+                  />
+                )}
+              />
               <Route
                 path={CONTACT}
                 render={reactRouterProps => (

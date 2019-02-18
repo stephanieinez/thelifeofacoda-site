@@ -12,8 +12,9 @@
 }
 
 .services-text a {
-  color: #998b6c;
+  color: black;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .services-text a:hover {
@@ -22,7 +23,7 @@
 
 .services-heading {
   text-transform: uppercase;
-  color: #998b6c;
+  color: #bfac6e;
   font-size: 26px;
   font-weight: bold;
   padding: 30px 0 15px 0;

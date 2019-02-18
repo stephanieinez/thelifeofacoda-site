@@ -1,31 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header, About, Services } from '../../components';
+import { Header, About } from '../../components';
 
-const Home = ({ aboutText, servicesItems, image, dividerImage }) => (
+const Home = ({ aboutText, servicesItems, image, homeVideo }) => (
   <div>
-    <Header image={image} />
+    <Header image={image} homeVideo={homeVideo} />
     <About content={aboutText} />
-    <div
-      className="divider-image"
-      style={{ backgroundImage: `url(${dividerImage})` }}
-    />
-    <Services servicesItems={servicesItems} />
   </div>
 );
 
 Home.defaultProps = {
   aboutText: '',
-  servicesItems: [],
   image: '',
-  dividerImage: ''
+  homeVideo: ''
 };
 
 Home.propTypes = {
   aboutText: PropTypes.string.isRequired,
-  servicesItems: PropTypes.array.isRequired, //eslint-disable-line
-  image: PropTypes.string.isRequired,
-  dividerImage: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired
 };
 
 export default Home;

@@ -5,7 +5,7 @@ import './loading.css';
 const Loading = () => (
   <div className="loading-container">
     <div className="loading-wrapper">
-      <img src="/lauralogo.png" className="loading-icon" alt="loading" />
+      <img src="/lauralogo.jpg" className="loading-icon" alt="loading" />
     </div>
   </div>
 );

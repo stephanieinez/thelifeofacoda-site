@@ -8,7 +8,7 @@ const About = ({ aboutTitle, aboutContent, image, video }) => {
   return (
     <div>
       <div
-        className="content-page-header"
+        className="about-page-header"
         style={{ backgroundImage: `url(${image})` }}
       />
       <div className="about-heading">{aboutTitle}</div>
@@ -34,14 +34,14 @@ About.defaultProps = {
   aboutContent: '',
   aboutTitle: '',
   image: '',
-  video: '',
+  video: ''
 };
 
 About.propTypes = {
   aboutTitle: PropTypes.string.isRequired,
   aboutContent: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired, //eslint-disable-line
-  video: PropTypes.string.isRequired,
+  video: PropTypes.string.isRequired
 };
 
 export default About;

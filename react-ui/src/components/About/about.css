@@ -5,9 +5,14 @@
   justify-content: center;
   height: 150px;
   padding: 20px;
-  text-align: center;
+  width: 100%;
+  background-color: black;
 }
 
 .about-text {
-  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #bfac6e;
+  font-size: 26px;
+  font-weight: bold;
 }

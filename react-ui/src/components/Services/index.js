@@ -4,11 +4,11 @@ import './services.css';
 
 const Services = ({ servicesItems }) => (
   <div className="services-container" id="services">
-    <div className="services-heading">Where I'm teaching</div>
+    <div className="services-heading">The life of a coda services</div>
     {servicesItems.map((item, index) => (
-      <div className="services-text" key={index}>
+      <a href={item.link} className="services-text" key={index}>
         {item}
-      </div>
+      </a>
     ))}
   </div>
 );

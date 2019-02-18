@@ -29,8 +29,6 @@ class Blog extends Component {
 
   render() {
     const { blogPosts, loading } = this.state;
-    console.log(blogPosts);
-
     return (
       <div className="blog-container">
         {!loading ? (

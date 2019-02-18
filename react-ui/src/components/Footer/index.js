@@ -5,10 +5,10 @@ import './footer.css';
 const Footer = () => (
   <div className="footer">
     <a href="https://www.instagram.com/thelifeofacoda/">
-      <FaInstagram size={25} color="#998b6c" className="icon" />
+      <FaInstagram size={25} color="#BFAC6E" className="icon" />
     </a>
     <a href="mailto:thelifeofacoda@gmail.com">
-      <FaEnvelopeO size={25} color="#998b6c" className="icon" />
+      <FaEnvelopeO size={25} color="#BFAC6E" className="icon" />
     </a>
   </div>
 );
