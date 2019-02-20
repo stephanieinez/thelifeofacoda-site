@@ -55,3 +55,9 @@
   font-weight: normal;
   padding-top: 0;
 }
+
+@media (max-width: 650px) {
+  .header-image {
+    flex-direction: column;
+  }
+}

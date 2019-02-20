@@ -15,8 +15,8 @@ const Navigation = () => (
       menu={
         <div className="navbar-container">
           <a href={ROOT}>
-            <img src="/lauralogo.jpg" alt="" className="nav-logo" />
-            <img src="/lauralogo.jpg" alt="" className="nav-logo" />
+            <img src="/logo-pt.png" alt="" className="nav-logo" />
+            <img src="/logo-yoga.png" alt="" className="nav-logo" />
           </a>
           <div className="navbar-contact">
             <a href="mailto:thelifeofacoda@gmail.com">
