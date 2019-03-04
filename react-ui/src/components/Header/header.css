@@ -6,10 +6,6 @@
   align-items: center;
 }
 
-.header-container img {
-  max-height: 300px;
-}
-
 .header-image {
   display: flex;
   align-items: center;
@@ -47,6 +43,14 @@
 .overlay-about {
   padding-top: 20px;
   font-weight: bold;
+}
+
+.header-image-yoga {
+  max-height: 235px;
+}
+
+.header-image-pt {
+  max-height: 300px;
 }
 
 .overlay-text:hover {

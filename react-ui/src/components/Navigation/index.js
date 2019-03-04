@@ -14,10 +14,10 @@ const Navigation = () => (
       smallMenuClassName="small-navbar"
       menu={
         <div className="navbar-container">
-          <a href={ROOT}>
+          <Link to={ROOT} className="logo-container">
             <img src="/logo-pt.png" alt="" className="nav-logo" />
-            <img src="/logo-yoga.png" alt="" className="nav-logo" />
-          </a>
+            <img src="/logo-yoga.png" alt="" className="nav-logo-yoga" />
+          </Link>
           <div className="navbar-contact">
             <a href="mailto:thelifeofacoda@gmail.com">
               thelifeofacoda@gmail.com

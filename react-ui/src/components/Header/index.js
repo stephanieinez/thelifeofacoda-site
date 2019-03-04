@@ -17,8 +17,8 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div className="header-image">
-          <img src="/logo-pt.png" alt="" />
-          <img src="/logo-yoga.png" alt="" />
+          <img className="header-image-pt" src="/logo-pt.png" alt="" />
+          <img className="header-image-yoga" src="/logo-yoga.png" alt="" />
         </div>
         <iframe
           className="home-video"
